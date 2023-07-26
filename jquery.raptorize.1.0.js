@@ -20,25 +20,23 @@
         audioSupported = true;
       }
 
-      //Raptor Vars
-      var raptorImageMarkup =
-        '<img id="elRaptor" style="display: none" src="raptor.png" />';
-      var raptorAudioMarkup =
-        '<audio id="elRaptorShriek" preload="auto"><source src="raptor-sound.mp3" /><source src="raptor-sound.ogg" /></audio>';
-      var locked = false;
-
       //Dog Vars
       var dogImageMarkup =
         '<img id="elDog" style="display: none" src="dog.png" />';
       $("body").append(dogImageMarkup);
       var dog = $("#elDog").css({
         position: "fixed",
-        bottom: "700px",
+        bottom: "-700px",
         right: "0",
         display: "block",
+        "z-index": 2, // make sure the dog is in front of the raptor
       });
 
-      //Append Raptor and Style
+      //Raptor Vars
+      var raptorImageMarkup =
+        '<img id="elRaptor" style="display: none" src="raptor.png" />';
+      var raptorAudioMarkup =
+        '<audio id="elRaptorShriek" preload="auto"><source src="raptor-sound.mp3" /><source src="raptor-sound.ogg" /></audio>';
       $("body").append(raptorImageMarkup);
       if (audioSupported) {
         $("body").append(raptorAudioMarkup);
@@ -48,6 +46,7 @@
         bottom: "-700px",
         right: "0",
         display: "block",
+        "z-index": 1, // make sure the raptor is behind the dog
       });
 
       // Animating Code
