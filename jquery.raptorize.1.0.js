@@ -33,7 +33,7 @@
       $("body").append(dogImageMarkup);
       var dog = $("#elDog").css({
         position: "fixed",
-        bottom: "-700px",
+        bottom: "700px",
         right: "0",
         display: "block",
       });
