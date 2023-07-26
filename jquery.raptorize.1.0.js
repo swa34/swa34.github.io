@@ -20,6 +20,13 @@
         audioSupported = true;
       }
 
+      //Raptor Vars
+      var raptorImageMarkup =
+        '<img id="elRaptor" style="display: none" src="raptor.png" />';
+      var raptorAudioMarkup =
+        '<audio id="elRaptorShriek" preload="auto"><source src="raptor-sound.mp3" /><source src="raptor-sound.ogg" /></audio>';
+      var locked = false;
+
       //Dog Vars
       var dogImageMarkup =
         '<img id="elDog" style="display: none" src="dog.png" />';
@@ -27,16 +34,11 @@
       var dog = $("#elDog").css({
         position: "fixed",
         bottom: "-700px",
-        right: "50px", // Adjust this value to move the dog further right
+        right: "0",
         display: "block",
-        "z-index": 2, // make sure the dog is in front of the raptor
       });
 
-      //Raptor Vars
-      var raptorImageMarkup =
-        '<img id="elRaptor" style="display: none" src="raptor.png" />';
-      var raptorAudioMarkup =
-        '<audio id="elRaptorShriek" preload="auto"><source src="raptor-sound.mp3" /><source src="raptor-sound.ogg" /></audio>';
+      //Append Raptor and Style
       $("body").append(raptorImageMarkup);
       if (audioSupported) {
         $("body").append(raptorAudioMarkup);
@@ -46,7 +48,6 @@
         bottom: "-700px",
         right: "0",
         display: "block",
-        "z-index": 1, // make sure the raptor is behind the dog
       });
 
       // Animating Code
@@ -98,7 +99,6 @@
         dog.animate(
           {
             bottom: "0",
-            right: "0", // Starting position of the dog during the animation
           },
           function () {
             $(this).animate(
@@ -118,7 +118,7 @@
                     function () {
                       dog = $("#elDog").css({
                         bottom: "-700px",
-                        right: "50px", // Reset the dog's position after the animation
+                        right: "0",
                       });
                       locked = false;
                     }
