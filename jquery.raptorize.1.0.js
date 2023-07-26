@@ -27,7 +27,7 @@
       var dog = $("#elDog").css({
         position: "fixed",
         bottom: "-700px",
-        right: "0",
+        right: "50px", // Adjust this value to move the dog further right
         display: "block",
         "z-index": 2, // make sure the dog is in front of the raptor
       });
@@ -106,7 +106,7 @@
               },
               100,
               function () {
-                var offset = $(this).position().left + 400;
+                var offset = $(this).position().left + 450; // The dog is a bit ahead of the raptor
                 $(this)
                   .delay(300)
                   .animate(
@@ -117,7 +117,7 @@
                     function () {
                       dog = $("#elDog").css({
                         bottom: "-700px",
-                        right: "0",
+                        right: "50px", // Reset the dog's position after the animation
                       });
                       locked = false;
                     }
