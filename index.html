@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Scotts Test Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
   </head>
   <body>
-    <h1>Outlook Calendar Embed</h1>
+    <div id="calendar"></div>
 
-    <iframe
-      src="https://outlook.office365.com/owa/calendar/d186223d71674c56931c9d2b7fbd8ee2@uga.edu/58fb164413144b2e937c64b9a844ed627530026152042776328/calendar.html"
-      width="1500"
-      height="800"
-      frameborder="0"
-      scrolling="no"
-    >
-    </iframe>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth",
+        });
+
+        calendar.render();
+      });
+    </script>
   </body>
 </html>
