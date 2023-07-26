@@ -28,6 +28,7 @@
         position: "fixed",
         bottom: "-700px",
         right: "0",
+        left: "50px", // Adjust this value to move the dog further right
         display: "block",
         "z-index": 2, // make sure the dog is in front of the raptor
       });
