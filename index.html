@@ -1,44 +1,15 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>CAES T-Shirtss:)</title>
-
-    <!-- jQuery: Grab Google CDN jQuery. fall back to local if necessary -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script>
-      !window.jQuery &&
-        document.write('<script src="jquery-1.4.1.min.js"><\/script>');
-    </script>
-
-    <!-- The raptorize file  -->
-    <script src="jquery.raptorize.1.0.js"></script>
-
-    <!-- For the button version -->
-    <script type="text/javascript">
-      $(window).load(function () {
-        $(".button").raptorize();
-      });
-    </script>
-
-    <!-- For the Konami Code version -->
-    <script type="text/javascript">
-      $(window).load(function () {
-        $(".button").raptorize({
-          enterOn: "konami-code",
-        });
-      });
-    </script>
+    <title>Cat Finder Plugin</title>
   </head>
   <body>
-    <h1>Welcome To CAES!</h1>
-
-    <p>
-      <button class="button">Click me</button> to activate the Raptorize plugin.
-    </p>
-    <p>
-      You can also use the Konami-Code (on your keyboard type &uarr; &uarr;
-      &darr; &darr; &larr; &rarr; &larr; &rarr; B A)
-    </p>
+    <button onclick="startCatFinder()">Start Cat Finder</button>
+    <script type="text/javascript">
+      function startCatFinder() {
+        document.write(
+          '<iframe src="http://adultcatfinder.com/embed/" width="320" height="430" style="position:fixed;bottom:0px;right:10px;z-index:100" frameBorder="0"></iframe>'
+        );
+      }
+    </script>
   </body>
 </html>
